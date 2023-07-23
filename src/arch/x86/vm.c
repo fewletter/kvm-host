@@ -123,6 +123,7 @@ int vm_arch_init_platform_device(vm_t *v)
     if (serial_init(&v->serial, &v->io_bus))
         return throw_err("Failed to init UART device");
     virtio_blk_init(&v->virtio_blk_dev);
+    virtio_net_init(&v->virtio_net_dev);
     return 0;
 }
 
