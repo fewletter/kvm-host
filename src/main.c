@@ -95,7 +95,7 @@ int main(int argc, char *argv[])
         return throw_err("Failed to load disk image");
 
     if (vm_late_init(&vm) < 0)
-        return -1;
+        return throw_err("Failed to run the net device");
 
     vm_run(&vm);
     vm_exit(&vm);

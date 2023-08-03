@@ -192,6 +192,7 @@ int vm_arch_load_initrd(vm_t *v, void *data, size_t datasz)
 
 int vm_late_init(vm_t *v)
 {
+    virtio_net_init_pci(&v->virtio_net_dev, &v->pci, &v->io_bus, &v->mmio_bus);
     return 0;
 }
 
